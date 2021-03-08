@@ -10,14 +10,14 @@ main{
     
     text-align: center;
     .ligne1{
-        display: grid;
-        grid-template-columns: auto auto;
+        display: flex;
+        justify-content: space-evenly;
     
     h1{
         color: $color1;
         text-align: center;
         font-family: $font1;
-        font-size: 120px;
+        font-size: 100px;
         margin-top:100px;
         span{
             font-size:  80px;
@@ -26,7 +26,7 @@ main{
     img{
         width: 400px;
         // float:right;
-        margin:100px 100px 0px 0px;
+        margin:100px 0px 0px 0px;
     }
 }
     .scrol{
@@ -87,6 +87,157 @@ main{
     }
 }
 }
+@media screen and (max-width:600px){
+    html{
+        main{
+            .ligne1{
+                
+                display: grid;
+                grid-template-columns: auto;
+                h1{
+                    color: $color1;
+                    text-align: center;
+                    font-family: $font1;
+                    font-size: 80px;
+                    margin-top:50px;
+                    float: left;
+                    span{
+                        font-size:  40px;
+                    }
+                }
+                img{
+                    width: 260px;
+                    margin: 80px 0px 0px 0px;
+                    
+                }
+            }
+            .scrol{
+                display: none;
+            }
+            .ligne3{
+                // position: relative;
+                grid-template-columns: auto;
+                margin-bottom: 350px;
+                width: auto;
+                // background-color: $color2;
+                // .images{
+                //     position: relative;
+                // }
+                // display: none;
+                .about{
+                    padding-bottom: 60px;
+                    h3,p{
+                        color: $color1;
+                        font-family: $font1;
+                        width: 80%;
+
+                    }
+                    p{
+                        padding-top: 50px;
+                        line-height: 200%;
+                        text-align: center;
+                        width: 80%;
+                    }
+                }
+                .images{
+
+                    img{
+                        width: 250px;
+                        position: absolute;
+                        // float: right;
+                        transition: 1s;
+                        left: 2%;
+                        
+                    }
+                    .pic2{
+                        margin-left: 250px;
+                    }
+                    .pic3{
+                        margin-left: 125px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px){
+    html{
+        main{
+            .ligne1{
+                
+                display: grid;
+                grid-template-columns: auto;
+                h1{
+                    color: $color1;
+                    text-align: center;
+                    font-family: $font1;
+                    font-size: 80px;
+                    margin-top:50px;
+                    float: left;
+                    span{
+                        font-size:  40px;
+                    }
+                }
+                img{
+                    width: 260px;
+                    margin: 80px 0px 0px 0px;
+                    
+                }
+            }
+            .scrol{
+                display: none;
+            }
+            .ligne3{
+                // position: relative;
+                grid-template-columns: auto;
+                margin-bottom: 350px;
+                width: auto;
+                // background-color: $color2;
+                // .images{
+                //     position: relative;
+                // }
+                // display: none;
+                .about{
+                    padding-bottom: 60px;
+                    h3,p{
+                        color: $color1;
+                        font-family: $font1;
+                        width: 80%;
+
+                    }
+                    p{
+                        padding-top: 50px;
+                        line-height: 200%;
+                        text-align: center;
+                        width: 80%;
+                    }
+                }
+                .images{
+
+                    img{
+                        width: 300px;
+                        position: absolute;
+                        // float: right;
+                        transition: 1s;
+                        left: 18%;
+                        
+                    }
+                    // .pic1{
+                    //     margin-right: 75px;
+                    // }
+                    .pic2{
+                        margin-left: 340px;
+                    }
+                    .pic3{
+                        margin-left: 170px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:800px){
     html{
         main{
@@ -100,14 +251,13 @@ main{
                     font-family: $font1;
                     font-size: 80px;
                     margin-top:50px;
-                    padding-left: 10%;
                     float: left;
                     span{
                         font-size:  40px;
                     }
                 }
                 img{
-                    width: 300px;
+                    width: 260px;
                     margin: 80px 0px 0px 0px;
                     
                 }
@@ -118,7 +268,7 @@ main{
             .ligne3{
                 // position: relative;
                 grid-template-columns: auto;
-                margin-bottom: 500px;
+                margin-bottom: 350px;
                 width: auto;
                 // background-color: $color2;
                 // .images{
@@ -126,7 +276,116 @@ main{
                 // }
                 // display: none;
                 .about{
-                    padding-left: 0px;
+                    padding-bottom: 60px;
+                    h3,p{
+                        color: $color1;
+                        font-family: $font1;
+                        width: 80%;
+
+                    }
+                    p{
+                        padding-top: 50px;
+                        line-height: 200%;
+                        text-align: center;
+                        width: 80%;
+                    }
+                }
+                .images{
+
+                    img{
+                        width: 270px;
+                        position: absolute;
+                        // float: right;
+                        transition: 1s;
+                        left: 3%;
+                        
+                    }
+                    .pic1{
+
+                    }
+                    .pic2{
+                        margin-left: 300px;
+                    }
+                    .pic3{
+                        margin-left: 148px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    html{
+        main{
+            .ligne1{
+                
+                display: grid;
+                grid-template-columns: auto;
+                h1{
+                    color: $color1;
+                    text-align: center;
+                    font-family: $font1;
+                    font-size: 80px;
+                    margin-top:50px;
+                    float: left;
+                    span{
+                        font-size:  40px;
+                    }
+                }
+                img{
+                    width: 260px;
+                    margin: 80px 0px 0px 0px;
+                    
+                }
+            }
+            .scrol{
+                display: none;
+            }
+            .ligne3{
+                // position: relative;
+                grid-template-columns: auto;
+                margin-bottom: 350px;
+                width: auto;
+                // background-color: $color2;
+                // .images{
+                //     position: relative;
+                // }
+                // display: none;
+                .about{
+                    padding-bottom: 60px;
+                    h3,p{
+                        color: $color1;
+                        font-family: $font1;
+                        width: 80%;
+
+                    }
+                    p{
+                        padding-top: 50px;
+                        line-height: 200%;
+                        text-align: center;
+                        width: 80%;
+                    }
+                }
+                .images{
+
+                    img{
+                        width: 225px;
+                        position: absolute;
+                        // float: right;
+                        transition: 1s;
+                        left: 3%;
+                        
+                    }
+                    .pic1{
+
+                    }
+                    .pic2{
+                        margin-left: 240px;
+                    }
+                    .pic3{
+                        margin-left: 120px;
+                    }
                 }
             }
         }

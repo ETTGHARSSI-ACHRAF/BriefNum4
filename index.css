@@ -8,17 +8,19 @@ html main {
 }
 
 html main .ligne1 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 html main .ligne1 h1 {
   color: #6C63FF;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 120px;
+  font-size: 100px;
   margin-top: 100px;
 }
 
@@ -28,7 +30,7 @@ html main .ligne1 h1 span {
 
 html main .ligne1 img {
   width: 400px;
-  margin: 100px 100px 0px 0px;
+  margin: 100px 0px 0px 0px;
 }
 
 html main .scrol img {
@@ -93,6 +95,126 @@ html main .ligne3 .images .pic3:hover {
           transform: scale(1.05);
 }
 
+@media screen and (max-width: 600px) {
+  html main .ligne1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  html main .ligne1 h1 {
+    color: #6C63FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    margin-top: 50px;
+    float: left;
+  }
+  html main .ligne1 h1 span {
+    font-size: 40px;
+  }
+  html main .ligne1 img {
+    width: 260px;
+    margin: 80px 0px 0px 0px;
+  }
+  html main .scrol {
+    display: none;
+  }
+  html main .ligne3 {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin-bottom: 350px;
+    width: auto;
+  }
+  html main .ligne3 .about {
+    padding-bottom: 60px;
+  }
+  html main .ligne3 .about h3, html main .ligne3 .about p {
+    color: #6C63FF;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+  }
+  html main .ligne3 .about p {
+    padding-top: 50px;
+    line-height: 200%;
+    text-align: center;
+    width: 80%;
+  }
+  html main .ligne3 .images img {
+    width: 250px;
+    position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
+    left: 2%;
+  }
+  html main .ligne3 .images .pic2 {
+    margin-left: 250px;
+  }
+  html main .ligne3 .images .pic3 {
+    margin-left: 125px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html main .ligne1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  html main .ligne1 h1 {
+    color: #6C63FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    margin-top: 50px;
+    float: left;
+  }
+  html main .ligne1 h1 span {
+    font-size: 40px;
+  }
+  html main .ligne1 img {
+    width: 260px;
+    margin: 80px 0px 0px 0px;
+  }
+  html main .scrol {
+    display: none;
+  }
+  html main .ligne3 {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin-bottom: 350px;
+    width: auto;
+  }
+  html main .ligne3 .about {
+    padding-bottom: 60px;
+  }
+  html main .ligne3 .about h3, html main .ligne3 .about p {
+    color: #6C63FF;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+  }
+  html main .ligne3 .about p {
+    padding-top: 50px;
+    line-height: 200%;
+    text-align: center;
+    width: 80%;
+  }
+  html main .ligne3 .images img {
+    width: 300px;
+    position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
+    left: 18%;
+  }
+  html main .ligne3 .images .pic2 {
+    margin-left: 340px;
+  }
+  html main .ligne3 .images .pic3 {
+    margin-left: 170px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   html main .ligne1 {
     display: -ms-grid;
@@ -106,14 +228,13 @@ html main .ligne3 .images .pic3:hover {
     font-family: "Montserrat", sans-serif;
     font-size: 80px;
     margin-top: 50px;
-    padding-left: 10%;
     float: left;
   }
   html main .ligne1 h1 span {
     font-size: 40px;
   }
   html main .ligne1 img {
-    width: 300px;
+    width: 260px;
     margin: 80px 0px 0px 0px;
   }
   html main .scrol {
@@ -122,11 +243,95 @@ html main .ligne3 .images .pic3:hover {
   html main .ligne3 {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
-    margin-bottom: 500px;
+    margin-bottom: 350px;
     width: auto;
   }
   html main .ligne3 .about {
-    padding-left: 0px;
+    padding-bottom: 60px;
+  }
+  html main .ligne3 .about h3, html main .ligne3 .about p {
+    color: #6C63FF;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+  }
+  html main .ligne3 .about p {
+    padding-top: 50px;
+    line-height: 200%;
+    text-align: center;
+    width: 80%;
+  }
+  html main .ligne3 .images img {
+    width: 270px;
+    position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
+    left: 3%;
+  }
+  html main .ligne3 .images .pic2 {
+    margin-left: 300px;
+  }
+  html main .ligne3 .images .pic3 {
+    margin-left: 148px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html main .ligne1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  html main .ligne1 h1 {
+    color: #6C63FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    margin-top: 50px;
+    float: left;
+  }
+  html main .ligne1 h1 span {
+    font-size: 40px;
+  }
+  html main .ligne1 img {
+    width: 260px;
+    margin: 80px 0px 0px 0px;
+  }
+  html main .scrol {
+    display: none;
+  }
+  html main .ligne3 {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin-bottom: 350px;
+    width: auto;
+  }
+  html main .ligne3 .about {
+    padding-bottom: 60px;
+  }
+  html main .ligne3 .about h3, html main .ligne3 .about p {
+    color: #6C63FF;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+  }
+  html main .ligne3 .about p {
+    padding-top: 50px;
+    line-height: 200%;
+    text-align: center;
+    width: 80%;
+  }
+  html main .ligne3 .images img {
+    width: 225px;
+    position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
+    left: 3%;
+  }
+  html main .ligne3 .images .pic2 {
+    margin-left: 240px;
+  }
+  html main .ligne3 .images .pic3 {
+    margin-left: 120px;
   }
 }
 /*# sourceMappingURL=index.css.map */
