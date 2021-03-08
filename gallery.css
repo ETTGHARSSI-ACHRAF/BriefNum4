@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+main {
+  min-height: 79vh;
+}
+
 main .trie {
   margin-top: 50px;
   display: -webkit-box;
@@ -60,13 +64,14 @@ main .boocks .boock {
 
 main .boocks .boock img {
   width: 150px;
+  height: 200px;
   margin-top: 10px;
 }
 
 main .boocks .boock h3 {
   color: #6C63FF;
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 main .boocks .boock h5 {

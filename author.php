@@ -46,7 +46,7 @@ include('traitementauthor.php');
         $query="SELECT * FROM `auteur`";
         $result=mysqli_query($connect,$query);
         while($row=$result->fetch_assoc()){
-         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imageAuthor" alt="" /></td><td>'.$row["cin"].'</td><td>'.$row["nom"].'</td><td>'.$row["prenom"].'</td><td>'.$row["date_naissance"].'</td><td><a href="#popup2"><i class="fas fa-edit"></i></a> <a nam="delet" href="traitementauthor.php?cn='.$row["cin"].'"><i class="fas fa-trash"></i></a></td></tr>';
+         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imageAuthor" alt="" /></td><td>'.$row["cin"].'</td><td>'.$row["nom"].'</td><td>'.$row["prenom"].'</td><td>'.$row["date_naissance"].'</td><td><a href="#popup2"><i class="fas fa-edit"></i></a> <a name="delet" href="author.php?cn='.$row["cin"].'"><i class="fas fa-trash"></i></a></td></tr>';
         }
         ?>   
       </table>

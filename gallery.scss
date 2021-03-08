@@ -6,6 +6,7 @@ $color4:#34315D;
 $font1:'Montserrat', sans-serif;
 
 main{
+    min-height: 79vh;
     .trie{
         margin-top: 50px;
         display: flex;
@@ -53,6 +54,7 @@ main{
             // transition: 0.5s;
             img{
                 width: 150px;
+                height: 200px;
                 margin-top: 10px;
                 
                 // margin-left: 25px;
@@ -60,7 +62,7 @@ main{
             h3{
                 color: $color1;
                 font-family: $font1;
-                font-size: 20px;
+                font-size: 18px;
             }
             h5{
                 text-align: left;
