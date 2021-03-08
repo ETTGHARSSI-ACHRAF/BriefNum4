@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+main .trie {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #6C63FF;
+}
+
+main .trie .authors {
+  margin-right: 10%;
+}
+
+main .trie .authors #select {
+  border: none;
+  border-bottom: 2px solid #6C63FF;
+}
+
+main .trie .pric .prix {
+  margin-right: 30px;
+  border: none;
+  border-bottom: 2px solid #6C63FF;
+  color: #6C63FF;
+}
+
+main .trie #btn {
+  background-color: transparent;
+  width: 100px;
+  border: 2px solid #6C63FF;
+  border-radius: 25px;
+  color: #6C63FF;
+  cursor: pointer;
+}
+
+main .trie #btn:hover {
+  background-color: #6C63FF;
+  color: white;
+}
+
+main .boocks {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .boocks .boock {
+  border-radius: 20px;
+  margin: 50px 25px 50px 25px;
+  border: 1px solid #6C63FF;
+  width: 200Px;
+  text-align: center;
+}
+
+main .boocks .boock img {
+  width: 150px;
+  margin-top: 10px;
+}
+
+main .boocks .boock h3 {
+  color: #6C63FF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+main .boocks .boock h5 {
+  text-align: left;
+  margin-left: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+}
+
+main .boocks .boock i {
+  color: #6C63FF;
+  font-size: 25px;
+  margin-left: 160px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  main .trie {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  main .trie #select {
+    margin-bottom: 40px;
+  }
+  main .trie #btn {
+    margin-top: 20px;
+  }
+  main .boocks {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=gallery.css.map */

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+$color1:#6C63FF;
+$color2:white;
+$color3:black;
+$color4:#34315D;
+$font1:'Montserrat', sans-serif;
+
+main{
+    .trie{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        color: $color1;
+        .authors{
+            margin-right: 10%;
+            #select{
+                border: none;
+                border-bottom: 2px solid $color1;
+            }
+        }
+        .pric{
+            .prix{
+                margin-right: 30px;
+                border: none;
+                border-bottom: 2px solid $color1;
+                color: $color1;
+            }
+        }
+        #btn{
+            background-color: transparent;
+            width: 100px;
+            border: 2px solid $color1;
+            border-radius: 25px;
+            color: $color1;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: $color1;
+            color: $color2;
+        }
+    }
+    .boocks{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+        
+        .boock{
+            border-radius: 20px;
+             margin: 50px 25px 50px 25px;
+            border : 1px solid $color1;
+            width: 200Px;
+            text-align: center;
+            // transition: 0.5s;
+            img{
+                width: 150px;
+                margin-top: 10px;
+                
+                // margin-left: 25px;
+            }
+            h3{
+                color: $color1;
+                font-family: $font1;
+                font-size: 20px;
+            }
+            h5{
+                text-align: left;
+                margin-left: 25px;
+                font-family: $font1;
+                font-size: 10px;
+            }
+            i{
+                color: $color1;
+                font-size: 25px;
+                margin-left: 160px;
+                cursor: pointer;
+            }
+        }
+        // .boock:hover{
+        //     transform: scale(1.05);
+        // }
+    }
+}
+@media screen and (max-width:800px){
+    main{
+        .trie{
+            flex-direction: column;
+            text-align: center;
+            #select{
+                margin-bottom: 40px;
+            }
+            #btn{
+                margin-top: 20px;
+            }
+        }
+        .boocks{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+        }
+    }
+}

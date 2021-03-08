@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+$color1:#6C63FF;
+$color2:white;
+$color3:black;
+$color4:#34315D;
+$font1:'Montserrat', sans-serif;
+html{
+    scroll-behavior: smooth;
+main{
+    
+    text-align: center;
+    .ligne1{
+        display: grid;
+        grid-template-columns: auto auto;
+    
+    h1{
+        color: $color1;
+        text-align: center;
+        font-family: $font1;
+        font-size: 120px;
+        margin-top:100px;
+        span{
+            font-size:  80px;
+        }
+    }
+    img{
+        width: 400px;
+        // float:right;
+        margin:100px 100px 0px 0px;
+    }
+}
+    .scrol{
+        img{
+            margin-top: 40px;
+            width: 45px;
+            cursor: pointer;
+            margin-bottom: 100px;
+        }
+    }
+    .ligne3{
+        // margin-top: 500px;
+        display: grid;
+        grid-template-columns: auto auto;
+        // display: flex;
+        margin-top: 100px;
+         width: 600px;
+         margin-bottom: 150px;
+        .about{
+            padding-left: 100px;
+            
+        h3,p{
+            color: $color1;
+            font-family: $font1;
+        }
+        p{
+            padding-top: 50px;
+            line-height: 200%;
+            text-align: left;
+            // width: 50vw;
+        }
+    }
+    .images{
+
+        img{
+            width: 300px;
+            position: absolute;
+            // float: right;
+            transition: 1s;
+        }
+        .pic2{
+            margin-left: 320px;
+        }
+        .pic3{
+            margin-left: 160px;
+        }
+        .pic1:hover{
+            transform: scale(1.05);
+        }
+        .pic2:hover{
+            transform: scale(1.05);
+        }
+        .pic3:hover{
+            transform: scale(1.05);
+        }
+    }
+    
+    }
+}
+}
+@media screen and (max-width:800px){
+    html{
+        main{
+            .ligne1{
+                
+                display: grid;
+                grid-template-columns: auto;
+                h1{
+                    color: $color1;
+                    text-align: center;
+                    font-family: $font1;
+                    font-size: 80px;
+                    margin-top:50px;
+                    padding-left: 10%;
+                    float: left;
+                    span{
+                        font-size:  40px;
+                    }
+                }
+                img{
+                    width: 300px;
+                    margin: 80px 0px 0px 0px;
+                    
+                }
+            }
+            .scrol{
+                display: none;
+            }
+            .ligne3{
+                // position: relative;
+                grid-template-columns: auto;
+                margin-bottom: 500px;
+                width: auto;
+                // background-color: $color2;
+                // .images{
+                //     position: relative;
+                // }
+                // display: none;
+                .about{
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}

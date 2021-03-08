@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+html main {
+  text-align: center;
+}
+
+html main .ligne1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+html main .ligne1 h1 {
+  color: #6C63FF;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 120px;
+  margin-top: 100px;
+}
+
+html main .ligne1 h1 span {
+  font-size: 80px;
+}
+
+html main .ligne1 img {
+  width: 400px;
+  margin: 100px 100px 0px 0px;
+}
+
+html main .scrol img {
+  margin-top: 40px;
+  width: 45px;
+  cursor: pointer;
+  margin-bottom: 100px;
+}
+
+html main .ligne3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  margin-top: 100px;
+  width: 600px;
+  margin-bottom: 150px;
+}
+
+html main .ligne3 .about {
+  padding-left: 100px;
+}
+
+html main .ligne3 .about h3, html main .ligne3 .about p {
+  color: #6C63FF;
+  font-family: "Montserrat", sans-serif;
+}
+
+html main .ligne3 .about p {
+  padding-top: 50px;
+  line-height: 200%;
+  text-align: left;
+}
+
+html main .ligne3 .images img {
+  width: 300px;
+  position: absolute;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+html main .ligne3 .images .pic2 {
+  margin-left: 320px;
+}
+
+html main .ligne3 .images .pic3 {
+  margin-left: 160px;
+}
+
+html main .ligne3 .images .pic1:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+html main .ligne3 .images .pic2:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+html main .ligne3 .images .pic3:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media screen and (max-width: 800px) {
+  html main .ligne1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  html main .ligne1 h1 {
+    color: #6C63FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    margin-top: 50px;
+    padding-left: 10%;
+    float: left;
+  }
+  html main .ligne1 h1 span {
+    font-size: 40px;
+  }
+  html main .ligne1 img {
+    width: 300px;
+    margin: 80px 0px 0px 0px;
+  }
+  html main .scrol {
+    display: none;
+  }
+  html main .ligne3 {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin-bottom: 500px;
+    width: auto;
+  }
+  html main .ligne3 .about {
+    padding-left: 0px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

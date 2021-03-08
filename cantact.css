@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  color: #6c63ff;
+  text-align: center;
+  font-size: 80px;
+  padding-top: 60px;
+}
+
+.cantact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px auto;
+  width: 70vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 30px;
+}
+
+.input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: 50vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #6c63ff;
+  border-radius: 3px;
+  outline: none;
+}
+
+.inputinfo {
+  margin-top: 80px;
+}
+
+::-webkit-input-placeholder {
+  color: #6c63ff;
+  font-size: 15px;
+}
+
+:-ms-input-placeholder {
+  color: #6c63ff;
+  font-size: 15px;
+}
+
+::-ms-input-placeholder {
+  color: #6c63ff;
+  font-size: 15px;
+}
+
+::placeholder {
+  color: #6c63ff;
+  font-size: 15px;
+}
+
+.send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 92px;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.buttonSend {
+  width: 20%;
+  height: 67px;
+  background-color: transparent;
+  border-color: #6c63ff;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.buttonSend:hover {
+  background-color: #6c63ff;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .cantact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .buttonSend {
+    width: 30%;
+    height: 50px;
+  }
+}
+/*# sourceMappingURL=cantact.css.map */

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cantact.css">
+    <script src="nav.js"></script>
+    <script src="https://kit.fontawesome.com/bc3854343b.js" crossorigin="anonymous"></script>
+    <title>Contact</title>
+</head>
+<body>
+    <nav>
+        <img src="image/white_logo.png" alt="logo" class="logo">
+        <i class="fas fa-bars" id="navicone" onclick="nav()"></i>
+        <ul id="navcontenu" class=" " vue="">
+            <li><a  href="index.html" > <i class="fas fa-home"></i>Home</a></li>
+            <li><a href="gallery.php" ><i class="fas fa-images"></i>Gallery</a></li>
+            <li><a href="contact.html" class="active"><i class="fas fa-file-signature"></i>Contact</a></li>
+            <li><a href="books.php"><i class="fas fa-book"></i>Books</a></li>
+            <li><a href="author.php"><i class="fas fa-address-card"></i>Author</a></li>
+        </ul>
+    </nav>
+<h1>Contact</h1>
+<main>
+    <form class="cantact">
+            <div class="inputinfo">
+                <!-- <label class="label">Name</label> -->
+                <input type="text" class="input" placeholder="Name" id="nom"/>
+            </div>
+            <div class="inputinfo">
+                <!-- <label class="label" >Phone</label> -->
+                <input type="text" class="input" placeholder="Phone" id="phone"/>
+            </div>
+            <div class="inputinfo">
+                <!-- <label class="label">Email</label> -->
+                <input type="email" class="input" placeholder="Email" id="email"/>
+            </div>
+            <div class="inputinfo">
+                <!-- <label class="label">Text</label> -->
+                <textarea type="text" class="input" placeholder="Message" id="message"></textarea>
+            </div>
+            <div class="send">
+                <button class="buttonSend" onclick="validform()">Send</button>
+            </div>
+    </form>
+
+</main>
+<!-- ****************FOOTE*************** -->
+    <footer>
+        <h4>copyright © 2021 waterfull.com. all rights reserved</h4>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+$color:#6c63ff;
+
+h1 {
+  color: $color;
+  text-align: center;
+  font-size: 80px;
+  padding-top: 60px;
+}
+.plusButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8em;
+  margin-bottom: 2em;
+  height: 5vh;
+}
+
+.fa-plus-square:before {
+  // content: "\f0fe";
+  font-size: 40px;
+  color: $color;
+}
+
+.tableau {
+  display: flex;
+  margin: 0px auto;
+  width: 80vw;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(63, 60, 246, 0.2);
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+th {
+  padding: 20px 0px;
+  font-size: 15px;
+  width: 9vw;
+}
+.rows {
+  background-color: rgb(230, 177, 177);
+}
+td {
+  padding: 10px 15px;
+  width: 9vw;
+  font-size: 12px;
+}
+td a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.imageAuthor {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+.fa-edit:before, .fa-trash:before{
+    padding: 0px 9px;
+    font-size: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16em  auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transition: all 5s ease-in-out;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    position: absolute;
+    font-size: 20px;
+    bottom: 14em;
+    z-index: 2;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: $color;
+  }
+  .popup .content {
+    max-height: 60%;
+    overflow: auto;
+  }
+
+  .popupInput{
+      display: flex;
+      flex-direction: column;
+      padding: 0px 20px;
+  }
+
+  .inputs{
+    width: fit-content;
+    width: 15vw;
+    padding: 20px 0px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $color;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  .popbutton{
+    position: absolute;
+    width: 6em;
+    height: 28px;
+    background-color: transparent;
+    border-color: $color;
+    border-radius: 30px;
+    font-size: 15px;
+    right: 42%;
+    top: 82%;
+    //  display: none;
+    &:hover {
+      background-color: $color;
+      color: white;
+    }
+  }
+
+  $height:2rem;
+.custom-file{
+  width:$height*8;
+  padding:0 $height/4;
+  position: absolute;
+  background-color: #CFD8DC;
+  overflow: hidden;
+  bottom: 14em;
+  .contentupload{
+    line-height:$height ;
+    font-size:$height/2 ;
+    max-width: $height*5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .buttonupload{
+    position: absolute;
+    right:0;
+    top:0;
+    padding: $height/4;
+    cursor: pointer;
+    background-color: $color;
+    color:white;
+  }
+  input[type="file"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    opacity:0;
+    
+  }
+}
