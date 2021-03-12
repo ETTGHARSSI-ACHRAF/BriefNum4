@@ -10,12 +10,17 @@ function nav() {
   }
 }
 
-document.getElementById("upload").onchange = function () {
-  var uploadfile = this.value.replace("C:\\fakepath\\", "");
-  console.log(this.value);
-  document.querySelector(".contentupload").innerText = uploadfile;
-};
+Array.from(document.querySelectorAll(".upload")).forEach(function (upload) {
+  upload.onchange = uploadFile;
+  console.log(upload);
+});
 
+function uploadFile() {
+  var uploadfile = this.value.replace("C:\\fakepath\\", "");
+  // console.log(this.value);
+  // console.log(this.parentNode);
+  this.parentNode.querySelector(".contentupload").innerText = uploadfile;
+};
 
 function validform(){
   var nom=document.getElementById("nom");
@@ -98,3 +103,4 @@ function trieparauthor(){
 //    document.getElementById("addbtn").style.display="block";
 // }
 // echo "<tr class=content'> <td> <img src="imageupload/".$row["image"]." class="imageAuthor" alt="" /></td><td>".$row["cin"]."</td><td>".$row[""]."</td><td>";
+

@@ -31,9 +31,13 @@ include ('connexion.php');
                     <label for="select">Author</label>
                     <select name="authors" id="select" onchange="trieparauthor()">
                         <option ></option>
-                        <option  name="author" >author1</option>
-                        <option  name="author">author2</option>
-                        <option  name="author">author3</option>
+                        <?php
+                        $query="SELECT nom FROM `auteur`";
+                        $result=mysqli_query($connect,$query);
+                        while($row=$result->fetch_assoc()){
+                            echo "<option>$row[nom]</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="pric">
@@ -45,20 +49,13 @@ include ('connexion.php');
             </div>
             <div class="boocks">
                 <?php
-                        $query="SELECT * FROM `livre`";
+                        $query="SELECT auteur.nom,livre.nomlivre,livre.prix,livre.datepub,livre.image FROM livre,auteur,livre_auteur WHERE livre.idlivre=livre_auteur.idlivre AND auteur.cin=livre_auteur.cin";
                         $result=mysqli_query($connect,$query);
                         while($row=$result->fetch_assoc()){
-                        echo '<div class="boock" name="boock"> <img src="imageupload/'.$row["image"].'"><h3>'.$row["nomlivre"].'</h3><h5>date pub :'.$row["datepub"].' </h5><h5>autres :<span name="nom">author1</span> </h5><h5>prix :<span name="prix">'.$row["prix"].'</span> </h5><i class="far fa-heart"></i></div>';
+                        echo '<div class="boock" name="boock"> <img src="imageupload/'.$row["image"].'"><h3>'.$row["nomlivre"].'</h3><h5>date pub :'.$row["datepub"].' </h5><h5>autres : <span name="nom">'.$row["nom"].'</span> </h5><h5>prix :<span name="prix">'.$row["prix"].'</span> </h5><i class="far fa-heart"></i></div>';
                         }
                 ?>  
-                <!-- <div class="boock" name="boock">
-                    <img src="image/HandCut-Radio-David-Coggins.jpg" alt="">
-                    <h3>title</h3>
-                    <h5>date pub : </h5>
-                    <h5>autres :<span name="nom">author1</span> </h5>
-                    <h5>prix :<span name="prix">250</span> </h5>
-                    <i class="far fa-heart"></i>
-                </div> -->
+
                 
             </div>
             

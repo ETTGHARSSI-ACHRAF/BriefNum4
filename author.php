@@ -1,5 +1,6 @@
 <?php
 include('traitementauthor.php');
+include('updateauthor.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +31,7 @@ include('traitementauthor.php');
     </nav>
     <h1>Author</h1>
     <div class="plusButton">
-      <a href="#popup1" onclick="add()"><i class="fas fa-plus-square"></i></a>
+      <a href="#popup1" ><i class="fas fa-plus-square"></i></a>
     </div>
     <main>
       <table class="tableau">
@@ -46,10 +47,16 @@ include('traitementauthor.php');
         $query="SELECT * FROM `auteur`";
         $result=mysqli_query($connect,$query);
         while($row=$result->fetch_assoc()){
-         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imageAuthor" alt="" /></td><td>'.$row["cin"].'</td><td>'.$row["nom"].'</td><td>'.$row["prenom"].'</td><td>'.$row["date_naissance"].'</td><td><a href="#popup2"><i class="fas fa-edit"></i></a> <a name="delet" href="author.php?cn='.$row["cin"].'"><i class="fas fa-trash"></i></a></td></tr>';
+         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imageAuthor" alt="" /></td><td>'.$row["cin"].'</td><td>'.$row["nom"].'</td><td>'.$row["prenom"].'</td><td>'.$row["date_naissance"].'</td><td><a href="author.php?cn='.$row["cin"].'#popup2"><i class="fas fa-edit"></i></a> <a name="delet" href="deleteauthor.php?cn='.$row["cin"].'"><i class="fas fa-trash"></i></a></td></tr>';
+        //  $cin=$row['cin'];
+        //  $lname=$row['prenom'];
+        //  $fname=$row["nom"];
+        //  $date=$row["date_naissance"];
+        //  $image=$row["image"];
         }
         ?>   
       </table>
+      <!-- add -->
       <div id="popup1" class="overlay">
         <div class="popup">
           <h2>Add an Author</h2>
@@ -59,7 +66,7 @@ include('traitementauthor.php');
           <div class="custom-file">
             <label class="contentupload" for="upload">Choose file</label>
             <span class="buttonupload">Uploud file</span>
-            <input type="file" id="upload" name="img" multiple />
+            <input type="file" class="upload" name="img" multiple />
           </div>
           <!-- *******form INput***** -->
           
@@ -83,34 +90,39 @@ include('traitementauthor.php');
           </form>
         </div>
       </div>
+
+      <!-- update -->
+      
       <div id="popup2" class="overlay">
         <div class="popup">
-          <h2>update an Author</h2>
+          <h2>Update an Author</h2>
           <a class="close" href="author.php">&times;</a>
-          <form class="content" method="POST" action="author.php#popup1" enctype="multipart/form-data">
+          
+          <form class="content" method="POST" action="author.php" enctype="multipart/form-data">
+          
           <!-- *******Upload photo***** -->
           <div class="custom-file">
-            <label class="contentupload" for="upload">Choose file</label>
-            <span class="buttonupload">Uploud file</span>
-            <input type="file" id="upload" name="img" multiple />
+            <label class="contentupload"  for="upload"><?=$image?></label>
+            <span class="buttonupload" >Uploud file</span>
+            <input type="file" class="upload"  name="img" multiple />
           </div>
           <!-- *******form INput***** -->
           
             <div class="popupInput">
-              <input type="text" class="inputs" name="fname" placeholder="First Name" />
+              <input type="text" class="inputs" name="fname" value=<?=$fname?> placeholder="First Name" />
               <span><?=$erreurfname?></span>
-              <input type="text" class="inputs" name="lname" placeholder="Last Name" />
+              <input type="text" class="inputs" name="lname" value=<?=$lname?>  placeholder="Last Name" />
               <span><?=$erreurlname?></span>
             </div>
             <div class="popupInput">
-              <input type="text" class="inputs" name="cin" placeholder="CIN" />
+              <input type="text" class="inputs" name="cin" value=<?=$cin?>  placeholder="CIN" />
               <span><?=$erreurcin?></span>
-              <input type="text" class="inputs" name="datebirth" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date"/>
+              <input type="text" class="inputs" name="datebirth" onfocus="(this.type='date')" value=<?=$date?> onblur="(this.type='text')" placeholder="Publication Date"/>
               <span><?=$erreurdate?></span>
             </div>
             <div class="buttonpopup">
-             
-              <input type="submit" name="update" value="Update"  class="popbutton" id="updatebtn">
+              <input type="submit" name="update" value="Update"  class="popbutton" id="addbtn">
+              
               <!-- <button class="popbutton">Submit</button> -->
             </div>
           </form>

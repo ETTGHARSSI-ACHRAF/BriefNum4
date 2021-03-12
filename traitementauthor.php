@@ -1,5 +1,6 @@
 <?php
 include('connexion.php');
+
      if(isset($_POST['fname'])){
     $firstname=$_POST['fname'];
     $lastname=$_POST['lname'];
@@ -7,6 +8,7 @@ include('connexion.php');
     $datebirth=$_POST['datebirth'];
     $image=$_FILES['img']['name'];
  }
+ 
 $erreurfname="";
 $erreurlname="";
 $erreurcin="";
@@ -28,21 +30,19 @@ if(isset($_POST['add'])){
         $upp="imageupload/".$image;
         move_uploaded_file($_FILES['img']['tmp_name'],$upp);
         $query="INSERT INTO `auteur`(`cin`,`nom`, `prenom`, `date_naissance`, `image`) VALUES ('$cin','$lastname','$firstname','$datebirth','$image')";
-        mysqli_query($connect,$query);
+       $test= mysqli_query($connect,$query);
+    //    echo $query;
+    //    if($test){
+    //        echo"hhhh";
+    //    }else{
+    //        echo"non";
+    //    }
     }
     
     // echo $query;
 }
 
 
-if(isset($_GET['cn'])){
-    $deletwithcin=$_GET['cn'];
-    $query="DELETE FROM `auteur` WHERE cin='$deletwithcin'";
-    mysqli_query($connect,$query);
-    // header("location:author.php");
-     
-    // echo $query;
-// echo "hhh";
-}
 // header("Location: author.php");
+
 ?>
