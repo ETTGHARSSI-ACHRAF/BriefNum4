@@ -1,3 +1,6 @@
+<?php
+include "connexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,120 +39,56 @@
             <th>Publication Date</th>
             <th>Management</th>
         </tr>
-        <tr class="content">
-            <td><img src="image/books image/1.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a>  <i class="fas fa-trash"></i></td>
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/2.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/3.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/4.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/5.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/6.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/7.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/8.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/9.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
-        <tr class="content">
-            <td><img src="image/books image/10.jpg" class="imagebooks" alt=""></td>
-            <td>CAN'T HURT ME</td>
-            <td>David Goggins</td>
-            <td>$17.83</td>
-            <td>15/11/2018</td>
-            <td><a href=""><i class="fas fa-edit"></i></a> <i class="fas fa-trash"></i></td>            
-        </tr>
+        <?php
+        $query="SELECT livre.idlivre,livre.image,livre.nomlivre,auteur.nom,livre.prix,livre.datepub FROM auteur,livre,livre_auteur WHERE auteur.cin=livre_auteur.cin AND livre_auteur.idlivre=livre.idlivre";
+        $result=mysqli_query($connect,$query);
+        while($row=$result->fetch_assoc()){
+         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imagebooks" alt="" /></td><td>'.$row["nomlivre"].'</td><td>'.$row["nom"].'</td><td>'.$row["prix"].'</td><td>'.$row["datepub"].'</td><td><a href=""><i class="fas fa-edit"></i></a> <a name="delet" href="traitementbook.php?id='.$row['idlivre'].'"><i class="fas fa-trash"></i></a></td></tr>';
+        }
+        ?>  
+
+        
     </table>
     <div id="popup2" class="overlay">
         <div class="popup">
             <h2>Add a Book</h2>
-            <a class="close" href="#">&times;</a>
-            <form class="content">
+            <a class="close" href="books.php">&times;</a>
+            <form class="content" method="post" action="traitementbook.php" enctype="multipart/form-data">
             <div class="custom-file">
-                <label class="contentupload" for="upload">Choose file</label>
-                <span class="buttonupload">Uploud file</span>
-                <input type="file" id="upload" multiple >
-              </div>
+            <label class="contentupload" for="upload">Choose file</label>
+            <span class="buttonupload">Uploud file</span>
+            <input type="file" class="upload" name="img" multiple />
+          </div>
             
                 <div class="popupInput">
-                    <input type="text" class="inputs" placeholder="Book Tittle"/>
+                    <input type="text" class="inputs" name="title" placeholder="Book Tittle"/>
                     <select name="authors" class="inputs" id="select" onchange="trieparauthor()">
                         <option disabled selected hidden>Authors</option>
-                        <option  name="author" >author1</option>
-                        <option  name="author">author2</option>
-                        <option  name="author">author3</option>
+                        <option   ></option>
+                        <?php
+                        $query="SELECT * FROM `auteur`";
+                        $result=mysqli_query($connect,$query);
+                        while($row=$result->fetch_assoc()){
+                            echo "<option value='".$row['cin']."'>$row[nom]</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="popupInput">
-                    <input type="number" class="inputs" placeholder="Price"/>
-                    <input type="text" class="inputs" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date"/>
+                    <input type="number" class="inputs" name="prix" placeholder="Price"/>
+                    <input type="text" class="inputs" name="date" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date"/>
                 </div>
                 <div class="buttonpopup">
-                    <button class="popbutton">Submit</button>
+                    <button class="popbutton" name="add">Submit</button>
                 </div>
             </form>
         </div>
     </div>
+    <!-- update forme -->
+
 </main>
-    <footer>
+    <!-- <footer>
         <h4>copyright © 2021 waterfull.com. all rights reserved</h4>
-    </footer>
+    </footer> -->
 </body>
 </html>
