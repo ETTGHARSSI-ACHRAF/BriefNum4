@@ -131,8 +131,12 @@ td a {
 
 .popupInput{
     display: flex;
+    
     flex-direction: column;
     padding: 0px 20px;
+    #idlivre{
+      display: none;
+    }
 }
 
 .inputs{
@@ -145,9 +149,12 @@ td a {
   border-radius: 3px;
   outline: none;
 }
-
+#btns{
+  display: flex;
+}
 .popbutton{
   position: absolute;
+  
   width: 6em;
   height: 28px;
   background-color: transparent;

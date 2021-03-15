@@ -30,4 +30,23 @@ if(isset($_GET['id'])){
     $result=mysqli_query($connect,$query);
      header('location:books.php');
 }
+if(isset($_POST['update']))
+{
+    $id=$_POST['idl'];
+    $title=$_POST['title'];
+    $image=$_FILES['img']['name'];
+    $prix=$_POST['prix'];
+    $date=$_POST['date'];
+    // $idauthor=$_POST['authors'];
+    if(empty($image)){
+        $query="UPDATE `livre` SET `nomlivre`='$title',`prix`='$prix',`datepub`='$date'WHERE`idlivre`=$id ";
+        mysqli_query($connect,$query);
+    }else{
+        $upp="imageupload/".$image;
+        move_uploaded_file($_FILES['img']['tmp_name'],$upp);
+        $query="UPDATE `livre` SET `nomlivre`='$title',`prix`='$prix',`datepub`='$date',`image`='$image' WHERE `idlivre`=$id";
+        mysqli_query($connect,$query);
+    }
+    header('location:books.php');
+}
 ?>

@@ -1,5 +1,6 @@
 <?php
 include "connexion.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,7 @@ include "connexion.php";
         $query="SELECT livre.idlivre,livre.image,livre.nomlivre,auteur.nom,livre.prix,livre.datepub FROM auteur,livre,livre_auteur WHERE auteur.cin=livre_auteur.cin AND livre_auteur.idlivre=livre.idlivre";
         $result=mysqli_query($connect,$query);
         while($row=$result->fetch_assoc()){
-         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imagebooks" alt="" /></td><td>'.$row["nomlivre"].'</td><td>'.$row["nom"].'</td><td>'.$row["prix"].'</td><td>'.$row["datepub"].'</td><td><a href=""><i class="fas fa-edit"></i></a> <a name="delet" href="traitementbook.php?id='.$row['idlivre'].'"><i class="fas fa-trash"></i></a></td></tr>';
+         echo '<tr class="content"><td><img src="imageupload/'.$row["image"].'" class="imagebooks" alt="" /></td><td>'.$row["nomlivre"].'</td><td>'.$row["nom"].'</td><td>'.$row["prix"].'</td><td>'.$row["datepub"].'</td><td><a href="books.php?id='.$row['idlivre'].'#popup1"><i class="fas fa-edit"></i></a> <a name="delet" href="traitementbook.php?id='.$row['idlivre'].'"><i class="fas fa-trash"></i></a></td></tr>';
         }
         ?>  
 
@@ -85,7 +86,68 @@ include "connexion.php";
         </div>
     </div>
     <!-- update forme -->
-
+    <div id="popup1" class="overlay">
+        <?php
+            if(isset($_GET['id'])){
+                $idb=$_GET['id'];
+                $query="SELECT livre.idlivre,livre.image,livre.nomlivre,auteur.nom,livre.prix,livre.datepub FROM auteur,livre,livre_auteur WHERE auteur.cin=livre_auteur.cin AND livre_auteur.idlivre=livre.idlivre AND livre.idlivre=$idb";
+                $result=mysqli_query($connect,$query);
+                while($row=$result->fetch_assoc()){
+                   $id=$row['idlivre'];
+                   $image=$row['image'];
+                   $title=$row['nomlivre'];
+                   $nom=$row['nom'];
+                   $prix=$row['prix'];
+                   $date=$row['datepub'];
+                 }
+            }
+        ?>
+        <div class="popup">
+            <h2>Update a Book</h2>
+            
+            <a class="close" href="books.php">&times;</a>
+            <form class="content" method="post" action="traitementbook.php" enctype="multipart/form-data">
+            
+            <div class="custom-file">
+            <label class="contentupload" for="upload"><?=$image?></label>
+            <span class="buttonupload">Uploud file</span>
+            <input type="file" class="upload" name="img" multiple />
+          </div>
+          
+            <div class="popupInput">
+                <input type="text" value="<?=$id?>" name="idl" id="idlivre">
+                    <input type="text" class="inputs" value="<?=$title?>" name="title" placeholder="Book Tittle"/>
+                    <select name="authors" class="inputs" id="select" onchange="trieparauthor()">
+                        <option disabled selected hidden><?=$nom?></option>
+                        <option   ></option>
+                        <?php
+                        $query="SELECT * FROM `auteur`";
+                        $result=mysqli_query($connect,$query);
+                        while($row=$result->fetch_assoc()){
+                            echo "<option value='".$row['cin']."'>$row[nom]</option>";
+                        }
+                        ?>
+                    </select>
+            </div>
+                <div class="popupInput">
+                    <input type="number" class="inputs" value="<?=$prix?>" name="prix" placeholder="Price"/>
+                    <input type="text" class="inputs" name="date" value="<?=$date?>" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date"/>
+                </div>
+                <div class="buttonpopup" id="btns">
+                    <button class="popbutton" name="update">Update</button>
+                    
+                </div> 
+                <table>
+                    <tr>
+                        <th>code</th>
+                        <th>cin</th>
+                        <th>idlivre</th>
+                    </tr>
+                </table> 
+            </form>
+        </div>
+        
+    </div>
 </main>
     <!-- <footer>
         <h4>copyright © 2021 waterfull.com. all rights reserved</h4>

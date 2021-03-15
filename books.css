@@ -170,6 +170,10 @@ td a {
   padding: 0px 20px;
 }
 
+.popupInput #idlivre {
+  display: none;
+}
+
 .inputs {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -181,6 +185,12 @@ td a {
   border-bottom: 2px solid #6c63ff;
   border-radius: 3px;
   outline: none;
+}
+
+#btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .popbutton {
