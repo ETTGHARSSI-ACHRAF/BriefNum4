@@ -21,11 +21,10 @@ include "connexion.php";
         <img src="image/white_logo.png" alt="logo" class="logo">
         <i class="fas fa-bars" id="navicone" onclick="nav()"></i>
         <ul id="navcontenu" class=" " vue="">
-            <li><a href="index.html"> <i class="fas fa-home"></i>Home</a></li>
-            <li><a href="gallery.php"><i class="fas fa-images"></i>Gallery</a></li>
-            <li><a href="contact.html"><i class="fas fa-file-signature"></i>Contact</a></li>
+            <li><a href="indexAdmin.html"> <i class="fas fa-home"></i>Home</a></li>
             <li><a href="books.php" class="active"><i class="fas fa-book"></i>Books</a></li>
             <li><a href="author.php"><i class="fas fa-address-card"></i>Author</a></li>
+            <li><a href="index.html"><i class="fas fa-sign-in-alt"></i>sign up</a></li>
         </ul>
     </nav>
     <h1>Books</h1>
@@ -129,7 +128,7 @@ include "connexion.php";
                 </div>
                 <div class="secondform">
                 <select name="authors" class="inputs2" id="select" onchange="trieparauthor()">
-                        <option disabled selected hidden><?= $nom ?></option>
+                        <option disabled selected hidden>Authors</option>
                         <option></option>
                         <?php
                         $query = "SELECT * FROM `auteur`";
@@ -139,7 +138,7 @@ include "connexion.php";
                         }
                         ?>
                     </select>
-                    <button class="popbutton2">Add Author</button>
+                    <button class="popbutton2" name="addauthor">Add Author</button>
                     <table class="table">
                         <tr>
                             <th>code</th>
@@ -151,7 +150,7 @@ include "connexion.php";
                             $query = "SELECT * FROM `livre_auteur` WHERE idlivre=$idb";
                             $result = mysqli_query($connect, $query);
                             while ($row = $result->fetch_assoc()) {
-                                echo "<tr><td>".$row['id']."</td><td>".$row['cin']."</td><td>".$row['idlivre']."</td><td><i class='fas fa-trash'></i></td></tr>";
+                                echo "<tr><td>".$row['id']."</td><td>".$row['cin']."</td><td>".$row['idlivre']."</td><td><a href='traitementbook.php?idc=".$row['id']."'><i class='fas fa-trash'></i><a></td></tr>";
                             }
                         ?>
                     </table>

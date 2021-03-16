@@ -20,8 +20,12 @@
                 <div class="fas fa-lock"></div>
                 <input type="password" placeholder="password">
             </div>
+<<<<<<< HEAD:login.html
             <input type="button" class="loginbutton" name="login" value="LOG IN">
             <!-- <button>LOGIN</button> -->
+=======
+            <a href="indexAdmin.html"><input type="button" class="loginbutton" name="login" value="LOG IN"></a>
+>>>>>>> 255345bff1e02948f681e425f0bffa81639d5614:login.php
         </form>
     </div>
 </body>

@@ -49,4 +49,19 @@ if(isset($_POST['update']))
     }
     header('location:books.php');
 }
+if(isset($_POST['addauthor'])){
+    $id=$_POST['idl'];
+    $idauthor=$_POST['authors'];
+    $query="INSERT INTO `livre_auteur` (`cin`, `idlivre`) VALUES ( '$idauthor', $id)";
+    mysqli_query($connect,$query);
+    header('location:books.php');
+}
+if(isset($_GET['idc'])){
+    $idc=$_GET['idc'];
+    // echo $idc;
+    $query="DELETE FROM `livre_auteur` WHERE id=$idc";
+    // echo $query;
+    mysqli_query($connect,$query);
+    header('location:books.php');
+}
 ?>
