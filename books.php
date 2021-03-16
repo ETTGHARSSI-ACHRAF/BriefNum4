@@ -53,19 +53,19 @@ include "connexion.php";
 
         </table>
         <div id="popup2" class="overlay">
-            <div class="popup">
+            <div class="popup0">
                 <h2>Add a Book</h2>
                 <a class="close" href="books.php">&times;</a>
                 <form class="content" method="post" action="traitementbook.php" enctype="multipart/form-data">
-                    <div class="custom-file">
+                    <div class="custom-file0">
                         <label class="contentupload" for="upload">Choose file</label>
                         <span class="buttonupload">Uploud file</span>
                         <input type="file" class="upload" name="img" multiple />
                     </div>
 
-                    <div class="popupInput">
-                        <input type="text" class="inputs" name="title" placeholder="Book Tittle" />
-                        <select name="authors" class="inputs" id="select" onchange="trieparauthor()">
+                    <div class="popupInput0">
+                        <input type="text" class="inputs0" name="title" placeholder="Book Tittle" />
+                        <select name="authors" class="inputs0" id="select" onchange="trieparauthor()">
                             <option disabled selected hidden>Authors</option>
                             <option></option>
                             <?php
@@ -77,12 +77,12 @@ include "connexion.php";
                             ?>
                         </select>
                     </div>
-                    <div class="popupInput">
-                        <input type="number" class="inputs" name="prix" placeholder="Price" />
-                        <input type="text" class="inputs" name="date" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date" />
+                    <div class="popupInput0">
+                        <input type="number" class="inputs0" name="prix" placeholder="Price" />
+                        <input type="text" class="inputs0" name="date" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Publication Date" />
                     </div>
-                    <div class="buttonpopup">
-                        <button class="popbutton" name="add">Submit</button>
+                    <div class="buttonpopup0">
+                        <button class="popbutton0" name="add">Submit</button>
                     </div>
                 </form>
             </div>

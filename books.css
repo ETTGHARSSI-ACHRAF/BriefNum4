@@ -337,4 +337,135 @@ td a {
   outline: none;
   margin-left: 20em;
 }
+
+.popup0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 16em  auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+}
+
+.popup0 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+  position: absolute;
+  font-size: 20px;
+  bottom: 14em;
+  z-index: 2;
+}
+
+.popup0 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup0 .close:hover {
+  color: #6c63ff;
+}
+
+.popup0 .content {
+  max-height: 60%;
+  overflow: auto;
+}
+
+.popupInput0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 20px;
+}
+
+.inputs0 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: 15vw;
+  padding: 20px 0px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #6c63ff;
+  border-radius: 3px;
+  outline: none;
+}
+
+.popbutton0 {
+  position: absolute;
+  width: 6em;
+  height: 28px;
+  background-color: transparent;
+  border-color: #6c63ff;
+  border-radius: 30px;
+  font-size: 15px;
+  right: 42%;
+  top: 82%;
+}
+
+.popbutton0:hover {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.custom-file0 {
+  width: 16rem;
+  padding: 0 0.5rem;
+  position: absolute;
+  background-color: #CFD8DC;
+  overflow: hidden;
+  bottom: 14em;
+}
+
+.custom-file0 .contentupload {
+  line-height: 2rem;
+  font-size: 1rem;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.custom-file0 .buttonupload {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #6c63ff;
+  color: white;
+}
+
+.custom-file0 input[type="file"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  opacity: 0;
+}
 /*# sourceMappingURL=books.css.map */
