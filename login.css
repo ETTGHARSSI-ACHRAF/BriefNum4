@@ -93,7 +93,7 @@ form .field {
   display: flex;
 }
 
-.field input, form button {
+.field input, form .loginbutton {
   height: 50px;
   width: 100%;
   font-size: 20px;
@@ -119,7 +119,7 @@ form .field {
   background: linear-gradient(#6C63FF, white);
 }
 
-button {
+.loginbutton {
   margin-top: 30px;
   border-radius: 10px !important;
   font-weight: 600;
@@ -127,7 +127,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.loginbutton:hover {
   color: white;
   text-shadow: 0 0 2px #34315d, 0 0 5px #34315d;
   border: 1px solid #6C63FF;
