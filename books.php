@@ -147,6 +147,13 @@ include "connexion.php";
                             <th>idlivre</th>
                             <th>delete</th>
                         </tr>
+                        <?php
+                            $query = "SELECT * FROM `livre_auteur` WHERE idlivre=$idb";
+                            $result = mysqli_query($connect, $query);
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr><td>".$row['id']."</td><td>".$row['cin']."</td><td>".$row['idlivre']."</td><td><i class='fas fa-trash'></i></td></tr>";
+                            }
+                        ?>
                     </table>
                 </div>
                 </form>
