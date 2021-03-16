@@ -11,16 +11,16 @@
 <body>
     <div class="login-form">
         <div class="text">LOGIN</div>
-        <form>
+        <form method="post" action="traitemenlogin.php">
             <div class="field">
                 <div class="fas fa-envelope"></div>
-                <input type="text" placeholder="username">
+                <input type="text" name="username" placeholder="username">
             </div>
             <div class="field">
                 <div class="fas fa-lock"></div>
-                <input type="password" placeholder="password">
+                <input type="password" name="password" placeholder="password">
             </div>
-            <a href="indexAdmin.html"><input type="button" class="loginbutton" name="login" value="LOG IN"></a>
+            <input type="submit" class="loginbutton" name="login" value="LOG IN">
         </form>
     </div>
 </body>
