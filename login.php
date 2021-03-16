@@ -20,7 +20,7 @@
                 <div class="fas fa-lock"></div>
                 <input type="password" placeholder="password">
             </div>
-            <button>LOGIN</button>
+            <a href="indexAdmin.html"><input type="button" class="loginbutton" name="login" value="LOG IN"></a>
         </form>
     </div>
 </body>
