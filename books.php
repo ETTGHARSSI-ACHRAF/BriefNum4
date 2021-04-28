@@ -1,6 +1,5 @@
 <?php
 include "connexion.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +50,7 @@ include "connexion.php";
 
 
         </table>
+        <!-- add forme -->
         <div id="popup2" class="overlay">
             <div class="popup0">
                 <h2>Add a Book</h2>

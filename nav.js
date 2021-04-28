@@ -10,17 +10,7 @@ function nav() {
   }
 }
 
-Array.from(document.querySelectorAll(".upload")).forEach(function (upload) {
-  upload.onchange = uploadFile;
-  console.log(upload);
-});
 
-function uploadFile() {
-  var uploadfile = this.value.replace("C:\\fakepath\\", "");
-  // console.log(this.value);
-  // console.log(this.parentNode);
-  this.parentNode.querySelector(".contentupload").innerText = uploadfile;
-};
 
 function validform(){
   var nom=document.getElementById("nom");
@@ -59,39 +49,40 @@ function trieparprix(){
   var boock=document.getElementsByName("boock");
   
   for(var i=0;i<prixboocks.length;i++){
-    // alert(i);
-     //alert(alert(parseInt(prixboocks[i].innerText) >=parseInt(prixmin)  && parseInt(prixboocks[i].innerText) <=parseInt(prixmax)));
+    
     if(parseFloat(prixboocks[i].innerText) >=parseFloat(prixmin)  && parseFloat(prixboocks[i].innerText) <=parseFloat (prixmax)){
       boock[i].style.display="block";
-      // console.log(boock[i]);
-      // alert(parseInt(prixboocks[i].innerText) >=parseInt(prixmin)  && parseInt(prixboocks[i].innerText) <=parseInt(prixmax));
+     
     }else 
     {
       boock[i].style.display="none";
     }
-    // alert("hhh");
+    
   }
 }
 function trieparauthor(){
   var select=document.getElementById("select");
-  // var select=document.getElementsByName("author");
+  
   var author=document.getElementsByName("nom");
   var boock=document.getElementsByName("boock");
   for(var i=0;i<boock.length;i++){
     if(select.value==author[i].innerText){
       boock[i].style.display="block";
-      // alert(i);
+      
     }
     else{
       boock[i].style.display="none";
     
      }
-    // alert("hhhhh");
+    
   
 
-  // alert(select.value);
+ 
 }
 }
+
+
+
 
 // function update(){
 //    document.getElementById("updatebtn").style.display="block";
@@ -104,3 +95,22 @@ function trieparauthor(){
 // }
 // echo "<tr class=content'> <td> <img src="imageupload/".$row["image"]." class="imageAuthor" alt="" /></td><td>".$row["cin"]."</td><td>".$row[""]."</td><td>";
 
+
+
+
+
+
+
+
+
+Array.from(document.querySelectorAll(".upload")).forEach(function (upload) {
+  upload.onchange = uploadFile;
+  console.log(upload);
+});
+
+function uploadFile() {
+  var uploadfile = this.value.replace("C:\\fakepath\\", "");
+  // console.log(this.value);
+  // console.log(this.parentNode);
+  this.parentNode.querySelector(".contentupload").innerText = uploadfile;
+};

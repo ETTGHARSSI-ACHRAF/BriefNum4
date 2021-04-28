@@ -9,10 +9,6 @@ if(isset($_POST['login'])){
         header('Location:indexAdmin.html');
     }else{
         header('Location:login.php');
-        // echo("<SCRIPT LANGUAGE='JavaScript'>
-        //             window.alert('Invalid Login or Password');
-        //             </SCRIPT>");
-                          
     }
 }
 ?>

@@ -2,6 +2,7 @@
 include('traitementauthor.php');
 include('updateauthor.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -108,9 +109,9 @@ include('updateauthor.php');
           <!-- *******form INput***** -->
           
             <div class="popupInput">
-              <input type="text" class="inputs" name="fname" value=<?=$fname?> placeholder="First Name" />
+              <input type="text" class="inputs" name="fname" value="<?=$fname?>" placeholder="First Name" />
               <span><?=$erreurfname?></span>
-              <input type="text" class="inputs" name="lname" value=<?=$lname?>  placeholder="Last Name" />
+              <input type="text" class="inputs" name="lname" value="<?=$lname?>"  placeholder="Last Name" />
               <span><?=$erreurlname?></span>
             </div>
             <div class="popupInput">
